@@ -29,51 +29,37 @@ a {
     transition: all 0.5s;
 }
 
-a:hover {
-    background: rgba(0, 0, 0, 0.3);
+.toggleNav {
+    display: none;
+}
+
+img {
+    width: 100%;
 }
 
 .wrapper {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 50px;
-}
-/*
-.flex-nav ul {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border: 1px solid black;
 }
 
-.flex-nav li {
-    flex: 3;
+.input {
+    padding: 10px;
+    border: 0;
 }
 
-.flex-nav .social {
-    flex: 1;
+section,
+footer {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px 0;
+    color: white;
+    font-weight: 100;
 }
 
-@media all and (max-width:1000px) {
-    .flex-nav ul {
-        flex-wrap: wrap;
-    }
-    .flex-nav li {
-        flex: 1 1 50%;
-    }
-    .flex-nav .social {
-        flex: 1 1 25%;
-    }
+a:hover {
+    background: rgba(0, 0, 0, 0.3);
 }
-
-@media all and (max-width:500px) {
-    .flex-nav li {
-        flex-basis: 100%;
-    }
-}
-
-*/
 
 .flex-nav ul {
     border: 1px solid black;
@@ -98,24 +84,20 @@ a:hover {
 }
 
 @media all and (max-width:1000px) {
-    
     .flex-nav ul {
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
     }
-
     .flex-nav li {
         -webkit-box-flex: 1;
             -ms-flex: 1 1 50%;
                 flex: 1 1 50%;
     }
-
     .flex-nav .social {
         -webkit-box-flex: 1;
             -ms-flex: 1 1 25%;
                 flex: 1 1 25%;
     }
-
 }
 
 @media all and (max-width:500px) {
@@ -123,4 +105,58 @@ a:hover {
         -ms-flex-preferred-size: 100%;
             flex-basis: 100%;
     }
+    .wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+
+    .wrapper > * {
+        -webkit-box-ordinal-group: 51;
+            -ms-flex-order: 50;
+                order: 50;
+    }
+
+    .flex-nav {
+        -webkit-box-ordinal-group: 2;
+            -ms-flex-order: 1;
+                order: 1;
+    }
+
+    .toggleNav {
+        display: block;
+    }
+
+    .flex-nav ul {
+        display: none;
+    }
+
+    .flex-nav ul.open {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    .top {
+        -webkit-box-ordinal-group: 3;
+            -ms-flex-order: 2;
+                order: 2;
+    }
+
+    section.details {
+        -webkit-box-ordinal-group: 4;
+            -ms-flex-order: 3;
+                order: 3;
+    }
+
+    section.signup {
+        -webkit-box-ordinal-group: 5;
+            -ms-flex-order: 4;
+                order: 4;
+    }
+
 }
